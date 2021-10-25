@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-import time
+from datetime import date
 
 class GetData:
 
@@ -33,11 +33,11 @@ data = GetData(url='https://coinmarketcap.com/pl/currencies/bitcoin/')
 parser = ParseData(page_source=data.page_source)
 output = parser.parse()
 print(output)
+today = date.today()
+print(today)
 
+plik = open('bitcoin.txt', 'a')
+plik.write(f'{output} - {today}')
 
-plik = open('bitcoin.txt', 'w')
-
-plik.write(output)
-
-
+plik.write('\n')
 plik.close()
