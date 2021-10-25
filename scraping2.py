@@ -39,6 +39,6 @@ print(dt_string)
 
 plik = open('bitcoin.txt', 'a')
 plik.write(f'{output} - {dt_string}')
-
 plik.write('\n')
+
 plik.close()
